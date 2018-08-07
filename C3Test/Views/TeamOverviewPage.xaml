@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="C3Test.Views.TeamOverviewPage"
+    Title="Teamlist">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding OpenAddMemberPageCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding TeamMembers}" RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}" IsPullToRefreshEnabled="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Specialization}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
